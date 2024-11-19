@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\mocs_compilation_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\QSpy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\DrawInfoWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\ObjTreeWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\QSpy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\IQSpyInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\DrawInfoWidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\ObjTreeWidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{D040A4EC-D5A6-3B4E-876A-9FB51255BF71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{7FE41FC3-3428-324A-9F20-54A599AF13E6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,5 @@
+C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/CMakeFiles/QtSpy.dir
+C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/CMakeFiles/ALL_BUILD.dir
+C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/CMakeFiles/ZERO_CHECK.dir
+C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins.dir
+C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/ALL_BUILD.dir

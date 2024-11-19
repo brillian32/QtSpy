@@ -1,0 +1,210 @@
+{
+	"BUILD_DIR" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/17305/CLionProjects/QtSpy/QSpyPlugins",
+	"CMAKE_EXECUTABLE" : "E:/IDE/apps/CLion/ch-0/241.15989.121/bin/cmake/win/x64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"C:/Users/17305/CLionProjects/QtSpy/QSpyPlugins/CMakeLists.txt",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5Config.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"E:/IDE/apps/CLion/ch-0/241.15989.121/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseArguments.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"E:/win_qt5/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"E:/IDE/apps/CLion/ch-0/241.15989.121/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeParseArguments.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "C:/Users/17305/CLionProjects/QtSpy",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"C:/Users/17305/CLionProjects/QtSpy/QSpyPlugins/DrawInfoWidget.h",
+			"MU",
+			"EWIEGA46WW/moc_DrawInfoWidget.cpp",
+			null
+		],
+		[
+			"C:/Users/17305/CLionProjects/QtSpy/QSpyPlugins/IQSpyInterface.h",
+			"MU",
+			"EWIEGA46WW/moc_IQSpyInterface.cpp",
+			null
+		],
+		[
+			"C:/Users/17305/CLionProjects/QtSpy/QSpyPlugins/ObjTreeWidget.h",
+			"MU",
+			"EWIEGA46WW/moc_ObjTreeWidget.cpp",
+			null
+		],
+		[
+			"C:/Users/17305/CLionProjects/QtSpy/QSpyPlugins/QSpy.h",
+			"MU",
+			"EWIEGA46WW/moc_QSpy.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen/include",
+	"INCLUDE_DIR_Debug" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen/include_Debug",
+	"INCLUDE_DIR_MinSizeRel" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen/include_MinSizeRel",
+	"INCLUDE_DIR_RelWithDebInfo" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen/include_RelWithDebInfo",
+	"INCLUDE_DIR_Release" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen/include_Release",
+	"MOC_COMPILATION_FILE" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen/mocs_compilation.cpp",
+	"MOC_COMPILATION_FILE_Debug" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen/mocs_compilation_Debug.cpp",
+	"MOC_COMPILATION_FILE_MinSizeRel" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen/mocs_compilation_MinSizeRel.cpp",
+	"MOC_COMPILATION_FILE_RelWithDebInfo" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen/mocs_compilation_RelWithDebInfo.cpp",
+	"MOC_COMPILATION_FILE_Release" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen/mocs_compilation_Release.cpp",
+	"MOC_DEFINITIONS" : [],
+	"MOC_DEFINITIONS_Debug" : 
+	[
+		"QSpyPlugins_EXPORTS",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_WIDGETS_LIB",
+		"WIN32"
+	],
+	"MOC_DEFINITIONS_MinSizeRel" : 
+	[
+		"QSpyPlugins_EXPORTS",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_WIDGETS_LIB",
+		"WIN32"
+	],
+	"MOC_DEFINITIONS_RelWithDebInfo" : 
+	[
+		"QSpyPlugins_EXPORTS",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_WIDGETS_LIB",
+		"WIN32"
+	],
+	"MOC_DEFINITIONS_Release" : 
+	[
+		"QSpyPlugins_EXPORTS",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_WIDGETS_LIB",
+		"WIN32"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : [],
+	"MOC_INCLUDES_Debug" : 
+	[
+		"E:/win_qt5/5.15.2/msvc2019_64/include",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtCore",
+		"E:/win_qt5/5.15.2/msvc2019_64/mkspecs/win32-msvc",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtGui",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets"
+	],
+	"MOC_INCLUDES_MinSizeRel" : 
+	[
+		"E:/win_qt5/5.15.2/msvc2019_64/include",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtCore",
+		"E:/win_qt5/5.15.2/msvc2019_64/mkspecs/win32-msvc",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtGui",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets"
+	],
+	"MOC_INCLUDES_RelWithDebInfo" : 
+	[
+		"E:/win_qt5/5.15.2/msvc2019_64/include",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtCore",
+		"E:/win_qt5/5.15.2/msvc2019_64/mkspecs/win32-msvc",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtGui",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets"
+	],
+	"MOC_INCLUDES_Release" : 
+	[
+		"E:/win_qt5/5.15.2/msvc2019_64/include",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtCore",
+		"E:/win_qt5/5.15.2/msvc2019_64/mkspecs/win32-msvc",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtGui",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE",
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : [],
+	"MOC_PREDEFS_FILE" : "",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : true,
+	"PARALLEL" : 14,
+	"PARSE_CACHE_FILE" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE_Debug" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins_autogen.dir/ParseCache_Debug.txt",
+	"PARSE_CACHE_FILE_MinSizeRel" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins_autogen.dir/ParseCache_MinSizeRel.txt",
+	"PARSE_CACHE_FILE_RelWithDebInfo" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins_autogen.dir/ParseCache_RelWithDebInfo.txt",
+	"PARSE_CACHE_FILE_Release" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins_autogen.dir/ParseCache_Release.txt",
+	"QT_MOC_EXECUTABLE" : "E:/win_qt5/5.15.2/msvc2019_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "E:/win_qt5/5.15.2/msvc2019_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE_Debug" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins_autogen.dir/AutogenUsed_Debug.txt",
+	"SETTINGS_FILE_MinSizeRel" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins_autogen.dir/AutogenUsed_MinSizeRel.txt",
+	"SETTINGS_FILE_RelWithDebInfo" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins_autogen.dir/AutogenUsed_RelWithDebInfo.txt",
+	"SETTINGS_FILE_Release" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins_autogen.dir/AutogenUsed_Release.txt",
+	"SOURCES" : 
+	[
+		[
+			"C:/Users/17305/CLionProjects/QtSpy/QSpyPlugins/DrawInfoWidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/17305/CLionProjects/QtSpy/QSpyPlugins/ObjTreeWidget.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Users/17305/CLionProjects/QtSpy/QSpyPlugins/QSpy.cpp", "MU", null ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}
