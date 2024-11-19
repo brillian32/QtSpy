@@ -67,6 +67,8 @@ bool QSpy::eventFilter(QObject *obj, QEvent *event)
 				m_treeWidget->updateTree(curWid);
 			}
 			m_treeWidget->show();
+			m_treeWidget->raise();
+			m_treeWidget->activateWindow();
 			return QObject::eventFilter(obj, event);
 		}
 	}

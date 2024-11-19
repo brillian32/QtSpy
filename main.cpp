@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 	auto *label3 = new QLabel(label1);
 	label3->setGeometry(0, 0, 10, 10);
 
-	QDir pluginsDir(QApplication::applicationDirPath());
+
 #ifdef QT_DEBUG
 	qDebug() << "Current build is Debug";
 #elif QT_NO_DEBUG
@@ -77,6 +77,8 @@ int main(int argc, char *argv[])
 #else
 	qDebug() << "Unknown build type";
 #endif
+
+	QDir pluginsDir(QApplication::applicationDirPath());
 	auto files = pluginsDir.entryList(QDir::Files);
 	foreach (QString fileName, files)
 	{

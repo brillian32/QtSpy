@@ -20,6 +20,9 @@ signals:
 private:
 	template<typename T>
 	void updateObjectTree(QWidget *widget, T parentItem);
+	static QWidget *getTopLevelWidget(QWidget *widget);
+
+	QWidget* m_curWidget{};
 };
 
 
