@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QtSpy_autogen/include_Debug" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtCore" /external:I "E:/win_qt5/5.15.2/msvc2019_64/./mkspecs/win32-msvc" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtGui" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtWinExtras" /source-charset:utf-8 /execution-charset:utf-8</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QtSpy_autogen/include_Debug" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtCore" /external:I "E:/win_qt5/5.15.2/msvc2019_64/./mkspecs/win32-msvc" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtGui" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets" /source-charset:utf-8 /execution-charset:utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -98,15 +98,15 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_WINEXTRAS_LIB;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_WINEXTRAS_LIB;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_Debug;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;E:\win_qt5\5.15.2\msvc2019_64\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_Debug;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_Debug;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;E:\win_qt5\5.15.2\msvc2019_64\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_Debug;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -179,7 +179,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Widgetsd.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5WinExtrasd.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Guid.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Cored.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Widgetsd.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Guid.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Cored.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -194,7 +194,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QtSpy_autogen/include_Release" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtCore" /external:I "E:/win_qt5/5.15.2/msvc2019_64/./mkspecs/win32-msvc" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtGui" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtWinExtras" /source-charset:utf-8 /execution-charset:utf-8</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QtSpy_autogen/include_Release" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtCore" /external:I "E:/win_qt5/5.15.2/msvc2019_64/./mkspecs/win32-msvc" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtGui" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets" /source-charset:utf-8 /execution-charset:utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
@@ -204,17 +204,17 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_WIDGETS_LIB;QT_WINEXTRAS_LIB;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_WIDGETS_LIB;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_WIDGETS_LIB;QT_WINEXTRAS_LIB;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_Release;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;E:\win_qt5\5.15.2\msvc2019_64\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_WIDGETS_LIB;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_Release;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_Release;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;E:\win_qt5\5.15.2\msvc2019_64\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_Release;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -287,7 +287,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Widgets.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5WinExtras.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Gui.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Core.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Widgets.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Gui.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Core.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -302,7 +302,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QtSpy_autogen/include_MinSizeRel" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtCore" /external:I "E:/win_qt5/5.15.2/msvc2019_64/./mkspecs/win32-msvc" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtGui" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtWinExtras" /source-charset:utf-8 /execution-charset:utf-8</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QtSpy_autogen/include_MinSizeRel" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtCore" /external:I "E:/win_qt5/5.15.2/msvc2019_64/./mkspecs/win32-msvc" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtGui" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets" /source-charset:utf-8 /execution-charset:utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
@@ -312,17 +312,17 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_WIDGETS_LIB;QT_WINEXTRAS_LIB;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_WIDGETS_LIB;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_WIDGETS_LIB;QT_WINEXTRAS_LIB;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_MinSizeRel;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;E:\win_qt5\5.15.2\msvc2019_64\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_WIDGETS_LIB;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_MinSizeRel;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_MinSizeRel;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;E:\win_qt5\5.15.2\msvc2019_64\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_MinSizeRel;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -395,7 +395,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Widgets.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5WinExtras.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Gui.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Core.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Widgets.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Gui.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Core.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -410,7 +410,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QtSpy_autogen/include_RelWithDebInfo" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtCore" /external:I "E:/win_qt5/5.15.2/msvc2019_64/./mkspecs/win32-msvc" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtGui" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtWinExtras" /source-charset:utf-8 /execution-charset:utf-8</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QtSpy_autogen/include_RelWithDebInfo" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtCore" /external:I "E:/win_qt5/5.15.2/msvc2019_64/./mkspecs/win32-msvc" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtGui" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE" /external:I "E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets" /source-charset:utf-8 /execution-charset:utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -421,15 +421,15 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_WIDGETS_LIB;QT_WINEXTRAS_LIB;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_WIDGETS_LIB;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_WIDGETS_LIB;QT_WINEXTRAS_LIB;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_RelWithDebInfo;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;E:\win_qt5\5.15.2\msvc2019_64\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_CORE_LIB;QT_NO_DEBUG;QT_GUI_LIB;QT_WIDGETS_LIB;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_RelWithDebInfo;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_RelWithDebInfo;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;E:\win_qt5\5.15.2\msvc2019_64\include\QtWinExtras;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QtSpy_autogen\include_RelWithDebInfo;E:\win_qt5\5.15.2\msvc2019_64\include;E:\win_qt5\5.15.2\msvc2019_64\include\QtCore;E:\win_qt5\5.15.2\msvc2019_64\.\mkspecs\win32-msvc;E:\win_qt5\5.15.2\msvc2019_64\include\QtGui;E:\win_qt5\5.15.2\msvc2019_64\include\QtANGLE;E:\win_qt5\5.15.2\msvc2019_64\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -502,7 +502,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Widgets.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5WinExtras.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Gui.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Core.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Widgets.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Gui.lib;E:\win_qt5\5.15.2\msvc2019_64\lib\Qt5Core.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>

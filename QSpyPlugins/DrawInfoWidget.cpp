@@ -11,6 +11,12 @@
 #include "qdebug.h"
 #include <utility>
 #include "qstring.h"
+#include "QTimer"
+
+#ifdef  Q_OS_LINUX
+#include <X11/Xlib.h>
+#include <X11/extensions/shape.h>
+#endif
 
 DrawInfoWidget::~DrawInfoWidget() = default;
 
@@ -24,6 +30,31 @@ DrawInfoWidget::DrawInfoWidget(QWidget *parent) : QWidget(parent)
 	setWindowState(Qt::WindowFullScreen);
 	////	设置窗口对鼠标事件透明
 	setAttribute(Qt::WA_TransparentForMouseEvents, true);
+#ifdef Q_OS_LINUX
+	QTimer::singleShot(0, [this]() {
+		// 获取窗口 ID
+		WId winId = this->winId();
+		Display *display = XOpenDisplay(nullptr);
+		if (!display)
+		{
+			qDebug() << "Cannot open X display!";
+			return;
+		}
+
+		// 设置鼠标事件穿透
+		Window x11Window = static_cast<Window>(winId);
+		XRectangle rect;
+		rect.x = 0;
+		rect.y = 0;
+		rect.width = 1;
+		rect.height = 1;
+
+		// 设置空的形状区域，鼠标事件可穿透
+		XShapeCombineRectangles(display, x11Window, ShapeInput, 0, 0, &rect, 0, ShapeSet, 0);
+		XFlush(display);
+		XCloseDisplay(display);
+	});
+#endif
 }
 
 void DrawInfoWidget::paintEvent(QPaintEvent *event)

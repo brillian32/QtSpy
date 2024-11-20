@@ -28,7 +28,7 @@ protected:
 private:
 	QList<QPair<QString, QString>> m_info;
 	QRect m_rect;
-	QWidget* m_curWidget;
+	QWidget* m_curWidget = nullptr;
 };
 
 

@@ -98,41 +98,10 @@
 	"MOC_COMPILATION_FILE_RelWithDebInfo" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QtSpy_autogen/mocs_compilation_RelWithDebInfo.cpp",
 	"MOC_COMPILATION_FILE_Release" : "C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QtSpy_autogen/mocs_compilation_Release.cpp",
 	"MOC_DEFINITIONS" : [],
-	"MOC_DEFINITIONS_Debug" : 
-	[
-		"QT_CORE_LIB",
-		"QT_GUI_LIB",
-		"QT_WIDGETS_LIB",
-		"QT_WINEXTRAS_LIB",
-		"WIN32"
-	],
-	"MOC_DEFINITIONS_MinSizeRel" : 
-	[
-		"QT_CORE_LIB",
-		"QT_GUI_LIB",
-		"QT_NO_DEBUG",
-		"QT_WIDGETS_LIB",
-		"QT_WINEXTRAS_LIB",
-		"WIN32"
-	],
-	"MOC_DEFINITIONS_RelWithDebInfo" : 
-	[
-		"QT_CORE_LIB",
-		"QT_GUI_LIB",
-		"QT_NO_DEBUG",
-		"QT_WIDGETS_LIB",
-		"QT_WINEXTRAS_LIB",
-		"WIN32"
-	],
-	"MOC_DEFINITIONS_Release" : 
-	[
-		"QT_CORE_LIB",
-		"QT_GUI_LIB",
-		"QT_NO_DEBUG",
-		"QT_WIDGETS_LIB",
-		"QT_WINEXTRAS_LIB",
-		"WIN32"
-	],
+	"MOC_DEFINITIONS_Debug" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB", "WIN32" ],
+	"MOC_DEFINITIONS_MinSizeRel" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB", "WIN32" ],
+	"MOC_DEFINITIONS_RelWithDebInfo" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB", "WIN32" ],
+	"MOC_DEFINITIONS_Release" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB", "WIN32" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -148,8 +117,7 @@
 		"E:/win_qt5/5.15.2/msvc2019_64/mkspecs/win32-msvc",
 		"E:/win_qt5/5.15.2/msvc2019_64/include/QtGui",
 		"E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE",
-		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets",
-		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWinExtras"
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets"
 	],
 	"MOC_INCLUDES_MinSizeRel" : 
 	[
@@ -158,8 +126,7 @@
 		"E:/win_qt5/5.15.2/msvc2019_64/mkspecs/win32-msvc",
 		"E:/win_qt5/5.15.2/msvc2019_64/include/QtGui",
 		"E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE",
-		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets",
-		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWinExtras"
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets"
 	],
 	"MOC_INCLUDES_RelWithDebInfo" : 
 	[
@@ -168,8 +135,7 @@
 		"E:/win_qt5/5.15.2/msvc2019_64/mkspecs/win32-msvc",
 		"E:/win_qt5/5.15.2/msvc2019_64/include/QtGui",
 		"E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE",
-		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets",
-		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWinExtras"
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets"
 	],
 	"MOC_INCLUDES_Release" : 
 	[
@@ -178,8 +144,7 @@
 		"E:/win_qt5/5.15.2/msvc2019_64/mkspecs/win32-msvc",
 		"E:/win_qt5/5.15.2/msvc2019_64/include/QtGui",
 		"E:/win_qt5/5.15.2/msvc2019_64/include/QtANGLE",
-		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets",
-		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWinExtras"
+		"E:/win_qt5/5.15.2/msvc2019_64/include/QtWidgets"
 	],
 	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
 	"MOC_OPTIONS" : [],

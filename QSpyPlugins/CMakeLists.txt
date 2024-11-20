@@ -16,7 +16,7 @@ set(CMAKE_BUILD_TYPE Debug)
 if (MSVC)
     # 对于 Visual Studio 编译器 执行源文件编译，和执行时为utf-8
     #/utf-8 选项 等价于 /source-charset:utf-8 + execution-charset:utf-8。
-    message("Using MSVC compiler")
+    message(STATUS "Using MSVC compiler")
     add_compile_options(/source-charset:utf-8 /execution-charset:utf-8)
 endif()
 

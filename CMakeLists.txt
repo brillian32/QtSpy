@@ -16,7 +16,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 if (MSVC)
     # 对于 Visual Studio 编译器 执行源文件编译，和执行时为utf-8
     #/utf-8 选项 等价于 /source-charset:utf-8 + execution-charset:utf-8。
-    message("Using MSVC compiler")
+    message(STATUS "Using MSVC compiler")
     add_compile_options(/source-charset:utf-8 /execution-charset:utf-8)
 endif()
 
@@ -34,12 +34,36 @@ add_executable(QtSpy
         QSpyPlugins/IQSpyInterface.h
         main.cpp
 )
-target_link_libraries(QtSpy
-        Qt5::Core
-        Qt5::Gui
-        Qt5::Widgets
-        Qt5::WinExtras
-)
+
+if (MSVC)
+    target_link_libraries(QtSpy
+            Qt5::Core
+            Qt5::Gui
+            Qt5::Widgets
+    )
+
+elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    # 如果未安装，则执行安装 x11支持： libx11-dev libxtst-dev libxext-dev
+    find_package(X11 QUIET)
+    if(NOT X11_FOUND)
+        message(STATUS "Required packages not found. Installing with apt-get...")
+        execute_process(
+            COMMAND sudo -S apt-get install -y libx11-dev libxtst-dev libxext-dev
+            RESULT_VARIABLE APT_INSTALL_STATUS
+        )
+        if (APT_INSTALL_STATUS)
+            message(FATAL_ERROR "Failed to install required libraries using apt-get!")
+        endif ()
+    endif ()
+    target_link_libraries(QtSpy
+            Qt5::Core
+            Qt5::Gui
+            Qt5::Widgets
+            X11
+            Xtst
+            Xext
+    )
+endif ()
 
 add_dependencies(QtSpy QSpyPlugins)
 
