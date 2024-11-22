@@ -15,26 +15,19 @@ bool QSpy::eventFilter(QObject *obj, QEvent *event)
 {
 	static bool noShow = false;
 	static QWidget *curWid = nullptr;
-	if (obj->objectName() == "infoTreeWidget" && event->type() == QEvent::Enter)
+	if (!isListen(obj) && event->type() == QEvent::Enter)
 	{
 		noShow = true;
-		return QObject::eventFilter(obj, event);
 	}
 
-	if (obj->objectName() == "infoTreeWidget" && event->type() == QEvent::Leave)
+	if (!isListen(obj) && event->type() == QEvent::Leave)
 	{
 		noShow = false;
-		return QObject::eventFilter(obj, event);
 	}
 
 	if (event->type() == QEvent::Enter)
 	{
 		if (noShow)
-		{
-			return QObject::eventFilter(obj, event);
-		}
-
-		if (obj->objectName() == "DrawInfoObj")
 		{
 			return QObject::eventFilter(obj, event);
 		}
@@ -89,7 +82,24 @@ void QSpy::start()
 		m_drawInfoWidget->updateRect();
 		m_drawInfoWidget->updateInfo();
 	});
+	connect(m_drawInfoWidget.data(), &DrawInfoWidget::sigSendInfo, m_treeWidget.data(), &ObjTreeWidget::onGetInfo);
+
 	m_drawInfoWidget->showFullScreen();
 	qApp->installEventFilter(this);
 }
+bool QSpy::isListen(QObject *obj)
+{
+	for (auto &item : gNolistenObjList)
+	{
+		if (item == obj->objectName())
+		{
+			return false;
+		}
+	}
+	return true;
+}
 
+IQSpyInterface* createQSpy()
+{
+	return new QSpy;
+}

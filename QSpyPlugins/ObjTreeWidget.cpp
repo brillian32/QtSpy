@@ -9,6 +9,10 @@
 
 ObjTreeWidget::ObjTreeWidget(QWidget *parent) : QTreeWidget(parent)
 {
+	// 设置右键菜单策略
+	setContextMenuPolicy(Qt::CustomContextMenu);
+	m_menu = new TreeObjMenu(this);
+	m_menu->hide();
 	QDesktopWidget *desktop = QApplication::desktop();
 	QRect screenRect = desktop->screenGeometry();
 	int x = screenRect.center().x();
@@ -26,6 +30,19 @@ ObjTreeWidget::ObjTreeWidget(QWidget *parent) : QTreeWidget(parent)
 			qDebug() << "clicked:" << wid;
 			sigUpdateCurWidget(wid);
 		}
+	});
+
+	connect(this, &ObjTreeWidget::customContextMenuRequested, [this](const QPoint &pos) {
+		qDebug() << pos;
+		auto item = itemAt(pos);
+		auto data = item->data(0, Qt::UserRole);
+		if (data.canConvert<QWidget *>())
+		{
+			auto wid = data.value<QWidget *>();
+			sigUpdateCurWidget(wid);
+		}
+		m_menu->move(mapToGlobal(pos));
+		m_menu->show();
 	});
 }
 
@@ -54,11 +71,16 @@ void ObjTreeWidget::updateTree(QWidget *widget)
 	expandAll();
 }
 
+void ObjTreeWidget::onGetInfo(QList<QPair<QString, QString>>& info)
+{
+	m_menu->setWinInfo(info);
+}
+
 template<typename T>
 void ObjTreeWidget::updateObjectTree(QWidget *widget, T parentItem)
 {
 	auto *item = new QTreeWidgetItem(parentItem);
-	item->setText(0, widget->metaObject()->className() + QString("|") + widget->objectName());
+	item->setText(0, widget->metaObject()->className() + QString(" | ") + widget->objectName());
 	item->setData(0, Qt::UserRole, QVariant::fromValue(widget));
 	item->setBackground(0, QBrush(Qt::white));
 	if (widget == m_curWidget)

@@ -19,4 +19,7 @@ QT_BEGIN_NAMESPACE
 Q_DECLARE_INTERFACE(IQSpyInterface, IQSpyInterface_iid)
 QT_END_NAMESPACE
 
+IQSpyInterface* createQSpy();
+
+
 #endif//IQSPYINTERFACE_H

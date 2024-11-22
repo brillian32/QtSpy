@@ -18,6 +18,9 @@ public:
 
 	void setCurWidget(QWidget*);
 
+	signals:
+		void sigSendInfo(QList<QPair<QString, QString>>&);
+
 public slots:
 	void updateRect();
 	void updateInfo();

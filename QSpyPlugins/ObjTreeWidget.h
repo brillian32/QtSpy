@@ -5,6 +5,7 @@
 #ifndef OBJTREEWIDGET_H
 #define OBJTREEWIDGET_H
 #include "QTreeWidget.h"
+#include "TreeObjMenu.h"
 
 class ObjTreeWidget: public QTreeWidget
 {
@@ -17,12 +18,16 @@ public:
 signals:
 	void sigUpdateCurWidget(QWidget *wid);
 
+public	slots:
+	void onGetInfo( QList<QPair<QString, QString>>&);
+
 private:
 	template<typename T>
 	void updateObjectTree(QWidget *widget, T parentItem);
 	static QWidget *getTopLevelWidget(QWidget *widget);
 
 	QWidget* m_curWidget{};
+	TreeObjMenu *m_menu{};
 };
 
 

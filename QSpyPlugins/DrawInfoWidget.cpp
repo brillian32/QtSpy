@@ -125,6 +125,8 @@ void DrawInfoWidget::updateInfo()
 	infoList.append({"focusPolicy", QString::fromUtf8(metaEnum.valueToKeys(m_curWidget->focusPolicy()))});
 	m_info = std::move(infoList);
 	update();
+
+	sigSendInfo(m_info);
 }
 
 void DrawInfoWidget::setCurWidget(QWidget * cur)

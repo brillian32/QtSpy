@@ -34,6 +34,9 @@ add_library(QSpyPlugins MODULE
         ${CMAKE_CURRENT_SOURCE_DIR}/DrawInfoWidget.h
         ${CMAKE_CURRENT_SOURCE_DIR}/ObjTreeWidget.h
         ${CMAKE_CURRENT_SOURCE_DIR}/ObjTreeWidget.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/TreeObjMenu.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/TreeObjMenu.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/TreeObjMenu.ui
 )
 
 target_link_libraries(QSpyPlugins
