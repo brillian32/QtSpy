@@ -123,6 +123,8 @@ C:
 if %errorlevel% neq 0 goto :cmEnd
 E:\IDE\apps\CLion\ch-0\241.15989.121\bin\cmake\win\x64\bin\cmake.exe -E cmake_autogen C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins_autogen.dir/AutogenInfo.json Debug
 if %errorlevel% neq 0 goto :cmEnd
+E:\IDE\apps\CLion\ch-0\241.15989.121\bin\cmake\win\x64\bin\cmake.exe -E touch C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen/autouic_Debug.stamp
+if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 :cmErrorLevel
@@ -230,6 +232,8 @@ if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
 E:\IDE\apps\CLion\ch-0\241.15989.121\bin\cmake\win\x64\bin\cmake.exe -E cmake_autogen C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins_autogen.dir/AutogenInfo.json Release
+if %errorlevel% neq 0 goto :cmEnd
+E:\IDE\apps\CLion\ch-0\241.15989.121\bin\cmake\win\x64\bin\cmake.exe -E touch C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen/autouic_Release.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -339,6 +343,8 @@ C:
 if %errorlevel% neq 0 goto :cmEnd
 E:\IDE\apps\CLion\ch-0\241.15989.121\bin\cmake\win\x64\bin\cmake.exe -E cmake_autogen C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins_autogen.dir/AutogenInfo.json MinSizeRel
 if %errorlevel% neq 0 goto :cmEnd
+E:\IDE\apps\CLion\ch-0\241.15989.121\bin\cmake\win\x64\bin\cmake.exe -E touch C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen/autouic_MinSizeRel.stamp
+if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 :cmErrorLevel
@@ -446,6 +452,8 @@ C:
 if %errorlevel% neq 0 goto :cmEnd
 E:\IDE\apps\CLion\ch-0\241.15989.121\bin\cmake\win\x64\bin\cmake.exe -E cmake_autogen C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/CMakeFiles/QSpyPlugins_autogen.dir/AutogenInfo.json RelWithDebInfo
 if %errorlevel% neq 0 goto :cmEnd
+E:\IDE\apps\CLion\ch-0\241.15989.121\bin\cmake\win\x64\bin\cmake.exe -E touch C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug/QSpyPlugins/QSpyPlugins_autogen/autouic_RelWithDebInfo.stamp
+if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 :cmErrorLevel
@@ -516,6 +524,75 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <CustomBuild Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\CMakeFiles\ba0865696b1244cf9477afdf05b8e307\autouic_(CONFIG).stamp.rule">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\TreeObjMenu.ui;E:\win_qt5\5.15.2\msvc2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\autouic_Debug.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\TreeObjMenu.ui;E:\win_qt5\5.15.2\msvc2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\autouic_Release.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\TreeObjMenu.ui;E:\win_qt5\5.15.2\msvc2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\autouic_MinSizeRel.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\TreeObjMenu.ui;E:\win_qt5\5.15.2\msvc2019_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\autouic_RelWithDebInfo.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
     <CustomBuild Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/17305/CLionProjects/QtSpy/QSpyPlugins/CMakeLists.txt</Message>
@@ -585,21 +662,37 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\DrawInfoWidget.h" />
     <ClInclude Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\ObjTreeWidget.h" />
     <ClCompile Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\ObjTreeWidget.cpp" />
+    <ClInclude Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\TreeObjMenu.h" />
+    <ClCompile Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\TreeObjMenu.cpp" />
+    <None Include="C:\Users\17305\CLionProjects\QtSpy\QSpyPlugins\TreeObjMenu.ui">
+    </None>
+    <ClInclude Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\include_Debug\ui_TreeObjMenu.h" />
+    <None Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\autouic_Debug.stamp">
+    </None>
     <ClCompile Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\mocs_compilation_Release.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClInclude Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\include_Release\ui_TreeObjMenu.h" />
+    <None Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\autouic_Release.stamp">
+    </None>
     <ClCompile Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\mocs_compilation_MinSizeRel.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClInclude Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\include_MinSizeRel\ui_TreeObjMenu.h" />
+    <None Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\autouic_MinSizeRel.stamp">
+    </None>
     <ClCompile Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\mocs_compilation_RelWithDebInfo.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClInclude Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\include_RelWithDebInfo\ui_TreeObjMenu.h" />
+    <None Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\QSpyPlugins\QSpyPlugins_autogen\autouic_RelWithDebInfo.stamp">
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug\ZERO_CHECK.vcxproj">

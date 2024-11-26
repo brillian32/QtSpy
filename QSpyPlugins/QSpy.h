@@ -11,7 +11,7 @@
 #include <QScopedPointer>
 
 //不参与窗口调试
-const QList<QString> gNolistenObjList{
+const QList<QString> gNoListenObjList{
 	"infoTreeWidget" ,
 	"TreeObjMenu",
 	"DrawInfoObj"

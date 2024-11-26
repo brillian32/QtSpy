@@ -27,7 +27,6 @@ find_package(Qt5 COMPONENTS
         Core
         Gui
         Widgets
-        WinExtras
         REQUIRED)
 
 add_executable(QtSpy

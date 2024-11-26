@@ -18,11 +18,13 @@ bool QSpy::eventFilter(QObject *obj, QEvent *event)
 	if (!isListen(obj) && event->type() == QEvent::Enter)
 	{
 		noShow = true;
+		return QObject::eventFilter(obj, event);
 	}
 
 	if (!isListen(obj) && event->type() == QEvent::Leave)
 	{
 		noShow = false;
+		return QObject::eventFilter(obj, event);
 	}
 
 	if (event->type() == QEvent::Enter)
@@ -89,7 +91,7 @@ void QSpy::start()
 }
 bool QSpy::isListen(QObject *obj)
 {
-	for (auto &item : gNolistenObjList)
+	for (auto &item : gNoListenObjList)
 	{
 		if (item == obj->objectName())
 		{

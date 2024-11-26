@@ -72,6 +72,12 @@
 			"MU",
 			"EWIEGA46WW/moc_QSpy.cpp",
 			null
+		],
+		[
+			"C:/Users/17305/CLionProjects/QtSpy/QSpyPlugins/TreeObjMenu.h",
+			"MU",
+			"EWIEGA46WW/moc_TreeObjMenu.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -200,7 +206,12 @@
 			"MU",
 			null
 		],
-		[ "C:/Users/17305/CLionProjects/QtSpy/QSpyPlugins/QSpy.cpp", "MU", null ]
+		[ "C:/Users/17305/CLionProjects/QtSpy/QSpyPlugins/QSpy.cpp", "MU", null ],
+		[
+			"C:/Users/17305/CLionProjects/QtSpy/QSpyPlugins/TreeObjMenu.cpp",
+			"MU",
+			null
+		]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
