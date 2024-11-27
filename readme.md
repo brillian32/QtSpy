@@ -13,3 +13,4 @@
 1. [x] 支持插件化
 2. [x] 兼容linux X11窗口系统
 3. [ ] UI 优化
+4. [ ] 支持qgraphicsview
