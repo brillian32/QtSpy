@@ -14,3 +14,24 @@
 2. [x] 兼容linux X11窗口系统
 3. [ ] UI 优化
 4. [ ] 支持qgraphicsview
+
+# how to use
+``` C++
+#include "IQSpyInterface.h"
+...
+...
+...
+QPluginLoader pluginLoader(fileName); //fileName为插件文件路径
+QObject *plugin = pluginLoader.instance();
+if (plugin)
+{
+    //获取插件名称
+    QString pluginName = plugin->metaObject()->className();
+    if (pluginName == "QSpy")
+    {
+        //初始化
+        auto plugs = qobject_cast<IQSpyInterface *>(plugin);
+        plugs->start();
+    }
+}
+```
