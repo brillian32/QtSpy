@@ -1,5 +1,4 @@
-
-#include "QSpyPlugins/IQSpyInterface.h"
+#include "IQSpyInterface.h"
 #include "QWidget"
 #include "qdebug.h"
 #include <QApplication>
@@ -41,6 +40,15 @@ int main(int argc, char *argv[])
 	// 第四层: 左侧上部第二个按钮
 	auto *button2 = new QPushButton("Button 2");
 	thirdLayerTopLeft->addWidget(button2);
+
+//scrolltoitem 测试
+	for (int i = 0; i < 100; ++i)
+	{
+
+		auto *button2 = new QPushButton("Button 2");
+		thirdLayerTopLeft->addWidget(button2);
+	}
+
 
 	// 第三层: 左侧下部标签
 	auto *label1 = new QLabel("Label 1");
