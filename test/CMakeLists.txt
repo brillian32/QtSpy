@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.28)
 project(QtSpyTest)
+
 find_package(Qt5 COMPONENTS
         Core
         Gui
@@ -8,6 +9,8 @@ find_package(Qt5 COMPONENTS
 
 add_executable(${PROJECT_NAME}
         main.cpp
+        WidgetTest.h
+        GraphicsViewTest.h
 )
 
 target_link_libraries(${PROJECT_NAME}

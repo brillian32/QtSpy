@@ -7,13 +7,17 @@
 #include "QFontMetrics"
 #include "QMetaEnum"
 #include "QPainter"
-//#include "QtWin"
-#include "qdebug.h"
-#include <utility>
-#include "qstring.h"
+// #include "QtWin"
 #include "QTimer"
+#include "qdebug.h"
+#include "qgraphicsview.h"
+#include "qgraphicsitem.h"
+#include "qstring.h"
+#include <utility>
 
-#ifdef  Q_OS_LINUX
+#include <typeinfo>
+
+#ifdef Q_OS_LINUX
 #include <X11/Xlib.h>
 #include <X11/extensions/shape.h>
 #endif
@@ -26,7 +30,7 @@ DrawInfoWidget::DrawInfoWidget(QWidget *parent) : QWidget(parent)
 	setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::Tool);
 	setAttribute(Qt::WA_TranslucentBackground);
 	setAttribute(Qt::WA_NoSystemBackground);
-//	QtWin::extendFrameIntoClientArea(this, -1, -1, -1, -1);// 使窗口完全透明
+	//	QtWin::extendFrameIntoClientArea(this, -1, -1, -1, -1);// 使窗口完全透明
 	setWindowState(Qt::WindowFullScreen);
 	////	设置窗口对鼠标事件透明
 	setAttribute(Qt::WA_TransparentForMouseEvents, true);
@@ -67,7 +71,7 @@ void DrawInfoWidget::paintEvent(QPaintEvent *event)
 	painter.drawRect(m_rect);
 
 	// 绘制窗体信息
-	QPen penText(QColor(255, 0, 0, 160));
+	QPen penText(QColor(27, 110, 238));
 	painter.setPen(penText);
 	QFont font("Arial", 12);// 设置字体和大小
 	font.setBold(true);
@@ -88,11 +92,76 @@ void DrawInfoWidget::paintEvent(QPaintEvent *event)
 }
 void DrawInfoWidget::updateRect()
 {
-	QPoint globalPos = m_curWidget->mapToGlobal(QPoint(0, 0));
-	m_rect = QRect(globalPos, m_curWidget->size());
-	update();
+	if (m_infoType == InfoType::Scene)
+	{
+		// 将场景中的矩形映射到视图坐标
+		QGraphicsView *view = m_curScene->views().first();
+		// 将场景中的矩形转换为视图中的矩形
+		QRectF viewRect = view->mapFromScene(m_curScene->sceneRect()).boundingRect();
+
+		// 将视图中的矩形转换为全局桌面坐标
+		auto topLeft = view->mapToGlobal(viewRect.topLeft().toPoint());
+		auto bottomRight = view->mapToGlobal(viewRect.bottomRight().toPoint());
+		m_rect = QRect(topLeft, bottomRight);
+		m_rect.adjust(1, 1, 1, 1);
+	}
+	else if (m_infoType == InfoType::Item)
+	{
+		QGraphicsView *view = m_curScene->views().first();
+		// 获取 item 在场景中的矩形
+		QRectF sceneRect = m_curItem->sceneBoundingRect();
+
+		// 将场景中的矩形转换为视图中的矩形
+		QRectF viewRect = view->mapFromScene(sceneRect).boundingRect();
+
+		// 将视图中的矩形转换为全局桌面坐标
+		QPoint topLeft = view->mapToGlobal(viewRect.topLeft().toPoint());
+		QPoint bottomRight = view->mapToGlobal(viewRect.bottomRight().toPoint());
+
+		m_rect =  QRect(topLeft, bottomRight);
+		m_rect.adjust(1, 1, 1, 1);
+	}
+	else if (m_infoType == InfoType::Widget)
+	{
+		QPoint globalPos = m_curWidget->mapToGlobal(QPoint(0, 0));
+		m_rect = QRect(globalPos, m_curWidget->size());
+		update();
+	}
+	else
+	{
+	}
 }
 void DrawInfoWidget::updateInfo()
+{
+	if (m_infoType == InfoType::Widget)
+	{
+		updateWidgetInfo();
+	}
+	else if (m_infoType == InfoType::Scene)
+	{
+		updateSceneInfo();
+	}
+	else if (m_infoType == InfoType::Item)
+	{
+		updateItemInfo();
+	}
+
+	update();
+	sigSendInfo(m_info);
+}
+
+void DrawInfoWidget::setCurWidget(QWidget *cur)
+{
+	m_infoType = InfoType::Widget;
+	m_curWidget = cur;
+}
+
+void DrawInfoWidget::setCurScene(QGraphicsScene *Scene)
+{
+	m_infoType = InfoType::Scene;
+	m_curScene = Scene;
+}
+void DrawInfoWidget::updateWidgetInfo()
 {
 	QPoint globalPos = m_curWidget->mapToGlobal(QPoint(0, 0));
 	QList<QPair<QString, QString>> infoList;
@@ -100,36 +169,76 @@ void DrawInfoWidget::updateInfo()
 	infoList.append({"Object Name", m_curWidget->objectName()});
 	infoList.append({"StyleSheet", m_curWidget->styleSheet()});
 	auto geom = m_curWidget->geometry();
-	infoList.append({"Geometry", QString::number(geom.x()) + "," +
-									 QString::number(geom.y()) + "," + QString::number(geom.width()) + "," + QString::number(geom.height())});
+	infoList.append({"Geometry", QString::number(geom.x()) + "," + QString::number(geom.y()) + "," +
+									 QString::number(geom.width()) + "," +
+									 QString::number(geom.height())});
 	auto frameGeom = m_curWidget->frameGeometry();
-	infoList.append({"Size", QString::number(m_curWidget->size().width()) + "," + QString::number(m_curWidget->size().height())});
+	infoList.append({"Size", QString::number(m_curWidget->size().width()) + "," +
+								 QString::number(m_curWidget->size().height())});
 	infoList.append({"Frame Geometry", QString::number(frameGeom.x()) + "," +
-										   QString::number(frameGeom.y()) + "," + QString::number(frameGeom.width()) + "," + QString::number(frameGeom.height())});
-	infoList.append({"Pos", QString::number(m_curWidget->pos().x()) + "," + QString::number(m_curWidget->pos().y())});
-	infoList.append({"Global Position", QString::number(globalPos.x()) + "," + QString::number(globalPos.y())});
+										   QString::number(frameGeom.y()) + "," +
+										   QString::number(frameGeom.width()) + "," +
+										   QString::number(frameGeom.height())});
+	infoList.append({"Pos", QString::number(m_curWidget->pos().x()) + "," +
+								QString::number(m_curWidget->pos().y())});
+	infoList.append(
+		{"Global Position", QString::number(globalPos.x()) + "," + QString::number(globalPos.y())});
 	QMetaEnum metaEnum = QMetaEnum::fromType<Qt::WindowType>();
 	auto value = metaEnum.valueToKeys(m_curWidget->windowType());
 	infoList.append({"Window Type", QString::fromUtf8(value)});
 
-	qDebug() << "Window Type:" << m_curWidget->windowType();
 	metaEnum = QMetaEnum::fromType<Qt::WindowFlags>();
-	infoList.append({"Window Flags", QString::fromUtf8(metaEnum.valueToKeys(m_curWidget->windowFlags()))});
-	qDebug() << "Window Flags:" << m_curWidget->windowFlags();
+	infoList.append(
+		{"Window Flags", QString::fromUtf8(metaEnum.valueToKeys(m_curWidget->windowFlags()))});
 	infoList.append({"Window Title", m_curWidget->windowTitle()});
 	infoList.append({"is Visible", QString(m_curWidget->isVisible() ? "true" : "false")});
-	infoList.append({"is Active Window", QString(m_curWidget->isActiveWindow() ? "true" : "false")});
+	infoList.append(
+		{"is Active Window", QString(m_curWidget->isActiveWindow() ? "true" : "false")});
 	infoList.append({"is Window Modal", QString(m_curWidget->isModal() ? "true" : "false")});
 	infoList.append({"is Enable", QString(m_curWidget->isEnabled() ? "true" : "false")});
 	metaEnum = QMetaEnum::fromType<Qt::FocusPolicy>();
-	infoList.append({"focusPolicy", QString::fromUtf8(metaEnum.valueToKeys(m_curWidget->focusPolicy()))});
+	infoList.append(
+		{"focusPolicy", QString::fromUtf8(metaEnum.valueToKeys(m_curWidget->focusPolicy()))});
 	m_info = std::move(infoList);
-	update();
-
-	sigSendInfo(m_info);
 }
 
-void DrawInfoWidget::setCurWidget(QWidget * cur)
+void DrawInfoWidget::updateSceneInfo()
 {
-	m_curWidget = cur;
+	QList<QPair<QString, QString>> infoList;
+	auto objName = m_curScene->objectName();
+	infoList.append({"Object Name", objName});
+	infoList.append({"Class Name", QString(m_curScene->metaObject()->className())});
+	infoList.append({"Scene Rect", QString::number(m_curScene->sceneRect().x()) + "," +
+										 QString::number(m_curScene->sceneRect().y()) + "," +
+										 QString::number(m_curScene->sceneRect().width()) + "," +
+										 QString::number(m_curScene->sceneRect().height())});
+
+
+	infoList.append({ "Global Rect", QString::number(m_rect.x()) + "," + QString::number(m_rect.y()) + "," +
+									 QString::number(m_rect.width()) + "," +
+									 QString::number(m_rect.height()) });
+
+	m_info = std::move(infoList);
+}
+
+void DrawInfoWidget::updateItemInfo()
+{
+	auto itemName = QString(typeid(*m_curItem).name());
+	itemName.remove("class ");
+	QList<QPair<QString, QString>> infoList;
+	infoList.append({"Item Class Name", itemName});
+
+
+	m_info = std::move(infoList);
+}
+void DrawInfoWidget::updateRectAndInfo()
+{
+	updateRect();
+	updateInfo();
+}
+
+void DrawInfoWidget::setCurItem(QGraphicsItem * item)
+{
+	m_infoType = InfoType::Item;
+	m_curItem = item;
 }

@@ -5,6 +5,9 @@
 #include "QSpy.h"
 #include "QMouseEvent"
 #include "qdebug.h"
+#include "qgraphicsitem.h"
+#include "qgraphicsscene.h"
+#include "qgraphicsview.h"
 #include "qmap.h"
 #include "qwidget.h"
 #include <QCoreApplication>
@@ -15,6 +18,9 @@ bool QSpy::eventFilter(QObject *obj, QEvent *event)
 {
 	static bool noShow = false;
 	static QWidget *curWid = nullptr;
+	static QGraphicsScene *curScene = nullptr;
+	static QGraphicsItem *curItem = nullptr;
+
 	if (!isListen(obj) && event->type() == QEvent::Enter)
 	{
 		noShow = true;
@@ -38,17 +44,43 @@ bool QSpy::eventFilter(QObject *obj, QEvent *event)
 		{
 			curWid = widget;
 			m_drawInfoWidget->setCurWidget(widget);
-			m_drawInfoWidget->updateRect();
-			m_drawInfoWidget->updateInfo();
+			m_drawInfoWidget->updateRectAndInfo();
+		}
+		else if (auto *Scene = qobject_cast<QGraphicsScene *>(obj))
+		{
+			curScene = Scene;
+			m_drawInfoWidget->setCurScene(Scene);
+			m_drawInfoWidget->updateRectAndInfo();
 		}
 		else
 		{
-			qWarning() << "Object is not a QWidget : " << obj->objectName() << "  " << obj->metaObject()->className() << " " << obj;
+//			qWarning() << "Object do not get information : " << obj->objectName() << "  " << obj->metaObject()->className() << " " << obj;
 		}
 	}
-	//	else if (event->type() == QEvent::Leave)
-	//	{
-	//	}
+
+	if (event->type() == QEvent::GraphicsSceneMouseMove)
+	{
+		if (auto *scene = qobject_cast<QGraphicsScene *>(obj))
+		{
+			auto view = scene->views().first();
+			// 获取鼠标指针的全局桌面坐标
+			QPoint globalPos = QCursor::pos();
+
+			// 将全局桌面坐标转换为视图坐标
+			QPoint viewPos = view->mapFromGlobal(globalPos);
+
+			// 将视图坐标转换为场景坐标
+			QPointF scenePos = view->mapToScene(viewPos);
+
+			// 使用 itemAt 方法查找指定坐标的 QGraphicsItem
+			QGraphicsItem *item = scene->itemAt(scenePos, QTransform());
+			if (item)
+			{
+				m_drawInfoWidget->setCurItem(item);
+				m_drawInfoWidget->updateRectAndInfo();
+			}
+		}
+	}
 
 	if (event->type() == QEvent::MouseButtonPress)
 	{
@@ -81,8 +113,7 @@ void QSpy::start()
 #endif
 	connect(m_treeWidget.data(), &ObjTreeWidget::sigUpdateCurWidget, this, [&](QWidget *cur) {
 		m_drawInfoWidget->setCurWidget(cur);
-		m_drawInfoWidget->updateRect();
-		m_drawInfoWidget->updateInfo();
+		m_drawInfoWidget->updateRectAndInfo();
 	});
 	connect(m_drawInfoWidget.data(), &DrawInfoWidget::sigSendInfo, m_treeWidget.data(), &ObjTreeWidget::onGetInfo);
 
@@ -101,7 +132,7 @@ bool QSpy::isListen(QObject *obj)
 	return true;
 }
 
-IQSpyInterface* createQSpy()
+IQSpyInterface *createQSpy()
 {
 	return new QSpy;
 }
