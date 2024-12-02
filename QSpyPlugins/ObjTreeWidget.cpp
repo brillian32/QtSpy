@@ -3,8 +3,11 @@
 //
 
 #include "ObjTreeWidget.h"
+#include "QGraphicsItem.h"
+#include "QGraphicsScene.h"
 #include "qapplication.h"
 #include "qdebug.h"
+#include "qgraphicsview.h"
 #include <QDesktopWidget>
 
 ObjTreeWidget::ObjTreeWidget(QWidget *parent) : QTreeWidget(parent)
@@ -64,35 +67,85 @@ QWidget *ObjTreeWidget::getTopLevelWidget(QWidget *widget)
 
 void ObjTreeWidget::updateTree(QWidget *widget)
 {
-	m_curWidget = widget;
 	clear();
+	if (auto view = qobject_cast<QGraphicsView *>(widget))
+	{
+		updateObjectTree(widget, this);
+		expandAll();
+		return;
+	}
+	m_curWidget = widget;
 	auto topLevelWidget = getTopLevelWidget(widget);
 	updateObjectTree(topLevelWidget, this);
 	expandAll();
 }
 
-void ObjTreeWidget::onGetInfo(QList<QPair<QString, QString>>& info)
+void ObjTreeWidget::onGetInfo(QList<QPair<QString, QString>> &info)
 {
 	m_menu->setWinInfo(info);
 }
 
 template<typename T>
-void ObjTreeWidget::updateObjectTree(QWidget *widget, T parentItem)
+void ObjTreeWidget::updateObjectTree(QObject *obj, T parentItem)
 {
-	auto *item = new QTreeWidgetItem(parentItem);
-	item->setText(0, widget->metaObject()->className() + QString(" | ") + widget->objectName());
-	item->setData(0, Qt::UserRole, QVariant::fromValue(widget));
-	item->setBackground(0, QBrush(Qt::white));
-	if (widget == m_curWidget)
+	//QGraphicsScene
+	if (auto view = qobject_cast<QGraphicsView *>(obj))
 	{
-		item->setSelected(true);
-		scrollToItem(item);
-	}
-	for (QObject *child : widget->children())
-	{
-		if (QWidget *childWidget = qobject_cast<QWidget *>(child))
+		if (auto scene = view->scene())
 		{
-			updateObjectTree(childWidget, item);
+			addItemsFromScene(scene, (QTreeWidget *) parentItem);
+			return;
+		}
+	}
+
+	//qwidget
+	if (auto widget = qobject_cast<QWidget *>(obj))
+	{
+		auto *item = new QTreeWidgetItem(parentItem);
+		item->setText(0, widget->metaObject()->className() + QString(" | ") + widget->objectName());
+		item->setData(0, Qt::UserRole, QVariant::fromValue(widget));
+		item->setBackground(0, QBrush(Qt::white));
+		if (widget == m_curWidget)
+		{
+			item->setSelected(true);
+			scrollToItem(item);
+		}
+		for (QObject *child : widget->children())
+		{
+			if (QWidget *childWidget = qobject_cast<QWidget *>(child))
+			{
+				updateObjectTree(childWidget, item);
+			}
+		}
+	}
+}
+
+
+template<typename T>
+void ObjTreeWidget::addItemsToTree(QGraphicsItem *item, T treeWidget)
+{
+	auto *newItem = new QTreeWidgetItem(treeWidget);
+	auto itemName = QString(typeid(*item).name());
+	itemName.remove("class ");
+	newItem->setText(0, itemName);
+	newItem->setBackground(0, QBrush(Qt::white));
+
+	foreach (QGraphicsItem *child, item->childItems())
+	{
+		addItemsToTree(child, newItem);
+	}
+}
+
+void ObjTreeWidget::addItemsFromScene(QGraphicsScene *scene, QTreeWidget *treeWidget)
+{
+	treeWidget->clear();
+	QList<QGraphicsItem *> items = scene->items();
+
+	foreach (QGraphicsItem *item, items)
+	{
+		if (!item->parentItem())
+		{// Only add top-level items
+			addItemsToTree(item, treeWidget);
 		}
 	}
 }

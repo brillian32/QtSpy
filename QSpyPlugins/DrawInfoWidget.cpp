@@ -66,13 +66,17 @@ void DrawInfoWidget::paintEvent(QPaintEvent *event)
 	// 绘制窗体轮廓
 	QPainter painter(this);
 	painter.setRenderHint(QPainter::Antialiasing);
-	QPen pen(Qt::red, 2);
+	QPen pen;
+//	pen.setColor(QColor(128, 203, 196,128));
+	pen.setColor(Qt::red);
+	pen.setWidth(2);
 	painter.setPen(pen);
 	painter.drawRect(m_rect);
 
 	// 绘制窗体信息
-	QPen penText(QColor(27, 110, 238));
-	painter.setPen(penText);
+	QPen textPen;
+	textPen.setColor(Qt::red);
+	painter.setPen(textPen);
 	QFont font("Arial", 12);// 设置字体和大小
 	font.setBold(true);
 	painter.setFont(font);
@@ -228,9 +232,29 @@ void DrawInfoWidget::updateItemInfo()
 	QList<QPair<QString, QString>> infoList;
 	infoList.append({"Item Class Name", itemName});
 
+	QRectF sceneRect = m_curItem->sceneBoundingRect();
+	infoList.append({"In Scene Rect", QString::number(sceneRect.x()) + "," +
+										 QString::number(sceneRect.y()) + "," +
+										 QString::number(sceneRect.width()) + "," +
+										 QString::number(sceneRect.height())});
+	QGraphicsView *view = m_curScene->views().first();
+	QRectF viewRect = view->mapFromScene(sceneRect).boundingRect();
+	infoList.append({"In View Rect", QString::number(viewRect.x()) + "," +
+										 QString::number(viewRect.y()) + "," +
+										 QString::number(viewRect.width()) + "," +
+										 QString::number(viewRect.height())});
+
+	QPoint topLeft = view->mapToGlobal(viewRect.topLeft().toPoint());
+	QPoint bottomRight = view->mapToGlobal(viewRect.bottomRight().toPoint());
+	QRect globalRect = QRect(topLeft, bottomRight);
+	infoList.append({"In Global Rect", QString::number(globalRect.x()) + "," +
+									 QString::number(globalRect.y()) + "," +
+									 QString::number(globalRect.width()) + "," +
+									 QString::number(globalRect.height())});
 
 	m_info = std::move(infoList);
 }
+
 void DrawInfoWidget::updateRectAndInfo()
 {
 	updateRect();

@@ -54,7 +54,7 @@ bool QSpy::eventFilter(QObject *obj, QEvent *event)
 		}
 		else
 		{
-//			qWarning() << "Object do not get information : " << obj->objectName() << "  " << obj->metaObject()->className() << " " << obj;
+			//			qWarning() << "Object do not get information : " << obj->objectName() << "  " << obj->metaObject()->className() << " " << obj;
 		}
 	}
 
@@ -62,22 +62,25 @@ bool QSpy::eventFilter(QObject *obj, QEvent *event)
 	{
 		if (auto *scene = qobject_cast<QGraphicsScene *>(obj))
 		{
-			auto view = scene->views().first();
-			// 获取鼠标指针的全局桌面坐标
-			QPoint globalPos = QCursor::pos();
-
-			// 将全局桌面坐标转换为视图坐标
-			QPoint viewPos = view->mapFromGlobal(globalPos);
-
-			// 将视图坐标转换为场景坐标
-			QPointF scenePos = view->mapToScene(viewPos);
-
-			// 使用 itemAt 方法查找指定坐标的 QGraphicsItem
-			QGraphicsItem *item = scene->itemAt(scenePos, QTransform());
-			if (item)
+			if (!scene->views().isEmpty())
 			{
-				m_drawInfoWidget->setCurItem(item);
-				m_drawInfoWidget->updateRectAndInfo();
+				auto view = scene->views().first();
+				// 获取鼠标指针的全局桌面坐标
+				QPoint globalPos = QCursor::pos();
+
+				// 将全局桌面坐标转换为视图坐标
+				QPoint viewPos = view->mapFromGlobal(globalPos);
+
+				// 将视图坐标转换为场景坐标
+				QPointF scenePos = view->mapToScene(viewPos);
+
+				// 使用 itemAt 方法查找指定坐标的 QGraphicsItem
+				QGraphicsItem *item = scene->itemAt(scenePos, QTransform());
+				if (item)
+				{
+					m_drawInfoWidget->setCurItem(item);
+					m_drawInfoWidget->updateRectAndInfo();
+				}
 			}
 		}
 	}
@@ -88,10 +91,24 @@ bool QSpy::eventFilter(QObject *obj, QEvent *event)
 		if (mouseEvent->button() == Qt::MiddleButton)
 		{
 			// 处理鼠标中键按下事件
-			qDebug("Middle mouse button pressed");
+			//			qDebug() << "Middle mouse button pressed " << obj;
 			if (m_treeWidget)
 			{
-				m_treeWidget->updateTree(curWid);
+				if (auto *view = qobject_cast<QGraphicsView *>(obj))
+				{
+					QPoint globalPos = QCursor::pos();
+					QPoint viewPos = view->mapFromGlobal(globalPos);
+					auto rect = view->viewport()->rect();
+					if (rect.contains(viewPos))
+					{
+						qDebug() << "In viewport";
+						m_treeWidget->updateTree(view);
+					}
+				}
+				else
+				{
+					m_treeWidget->updateTree(curWid);
+				}
 			}
 			m_treeWidget->show();
 			m_treeWidget->raise();
