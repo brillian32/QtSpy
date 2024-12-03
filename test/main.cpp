@@ -15,6 +15,18 @@ int main(int argc, char *argv[])
 	QApplication a(argc, argv);
 	WidgetTest widget;
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+	QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGL);
+#endif
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+	QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+	QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+#  if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+	QApplication::setHighDpiScaleFactorRoundingPolicy(
+		Qt::HighDpiScaleFactorRoundingPolicy::PassThrough);
+#  endif
+#endif
+
 #ifdef QT_DEBUG
 	qDebug() << "Current build is Debug";
 #elif QT_NO_DEBUG
