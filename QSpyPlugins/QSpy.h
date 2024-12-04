@@ -24,7 +24,11 @@ class QSpy: public QObject , public IQSpyInterface
     Q_PLUGIN_METADATA(IID "com.example.IQSpyInterface.1.0")
     Q_INTERFACES(IQSpyInterface)
 
+
+
 public:
+	QSpy();
+	virtual ~QSpy() override;
 	void start() override;
 
 protected:

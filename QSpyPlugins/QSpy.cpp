@@ -141,6 +141,8 @@ void QSpy::start()
 	connect(m_switchToolWidget.data(), &SwitchToolWidget::sigsStateChange, [&](bool state)
 			{
 				m_switchState = state;
+				m_drawInfoWidget->setVisible(state);
+				m_treeWidget->setVisible(state);
 			});
 	m_drawInfoWidget->showFullScreen();
 	qApp->installEventFilter(this);
@@ -157,6 +159,12 @@ bool QSpy::isListen(QObject *obj)
 		}
 	}
 	return true;
+}
+QSpy::QSpy()
+{
+}
+QSpy::~QSpy()
+{
 }
 
 IQSpyInterface *createQSpy()
