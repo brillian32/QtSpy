@@ -16,6 +16,10 @@
 
 bool QSpy::eventFilter(QObject *obj, QEvent *event)
 {
+	if(!m_switchState)
+	{
+		return QObject::eventFilter(obj, event);
+	}
 	static bool noShow = false;
 	static QWidget *curWid = nullptr;
 	static QGraphicsScene *curScene = nullptr;
@@ -134,8 +138,14 @@ void QSpy::start()
 	});
 	connect(m_drawInfoWidget.data(), &DrawInfoWidget::sigSendInfo, m_treeWidget.data(), &ObjTreeWidget::onGetInfo);
 
+	connect(m_switchToolWidget.data(), &SwitchToolWidget::sigsStateChange, [&](bool state)
+			{
+				m_switchState = state;
+			});
 	m_drawInfoWidget->showFullScreen();
 	qApp->installEventFilter(this);
+
+	m_switchToolWidget->show();
 }
 bool QSpy::isListen(QObject *obj)
 {

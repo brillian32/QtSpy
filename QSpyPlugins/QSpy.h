@@ -9,6 +9,7 @@
 #include "ObjTreeWidget.h"
 #include <QObject>
 #include <QScopedPointer>
+#include "SwitchToolWidget.h"
 
 //不参与窗口调试
 const QList<QString> gNoListenObjList{
@@ -35,6 +36,8 @@ private:
 private:
 	QScopedPointer<ObjTreeWidget> m_treeWidget{new ObjTreeWidget};
 	QScopedPointer<DrawInfoWidget> m_drawInfoWidget{new DrawInfoWidget};
+	QScopedPointer<SwitchToolWidget> m_switchToolWidget{new SwitchToolWidget};
+	bool m_switchState{false};
 };
 
 #endif//QSPY_H

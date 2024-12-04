@@ -1,7 +1,0 @@
-E:\IDE\apps\CLion\ch-0\241.15989.121\bin\cmake\win\x64\bin\cmake.exe -G "Visual Studio 17 2022" -S C:\Users\17305\CLionProjects\QtSpy -B C:\Users\17305\CLionProjects\QtSpy\cmake-build-debug
--- Selecting Windows SDK version 10.0.19041.0 to target Windows 10.0.22631.
--- Using MSVC compiler
--- Using MSVC compiler
--- Configuring done (0.1s)
--- Generating done (0.1s)
--- Build files have been written to: C:/Users/17305/CLionProjects/QtSpy/cmake-build-debug

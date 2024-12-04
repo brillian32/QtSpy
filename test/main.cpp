@@ -12,8 +12,6 @@
 
 int main(int argc, char *argv[])
 {
-	QApplication a(argc, argv);
-	WidgetTest widget;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 	QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGL);
@@ -26,6 +24,11 @@ int main(int argc, char *argv[])
 		Qt::HighDpiScaleFactorRoundingPolicy::PassThrough);
 #  endif
 #endif
+
+
+	QApplication a(argc, argv);
+	WidgetTest widget;
+
 
 #ifdef QT_DEBUG
 	qDebug() << "Current build is Debug";
