@@ -27,7 +27,7 @@ SwitchToolWidget::SwitchToolWidget(QWidget *parent) : QWidget(parent)
 	setObjectName("SwitchToolWidgetObj");
 	setToolTip("QtSpy Switch");
 	setAttribute(Qt::WA_TranslucentBackground);
-	setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+	setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::Tool);
 	setGeometry(0, 0, 70, 70);
 	QTimer::singleShot(0, [this]() {
 		m_openState = false;

@@ -18,21 +18,11 @@ public:
 		setFlags(QGraphicsItem::ItemIsMovable | QGraphicsItem::ItemIsSelectable);
 		// 设置接受悬停事件
 		setAcceptHoverEvents(true);
-	}
-
-protected:
-	void mousePressEvent(QGraphicsSceneMouseEvent *event) override
-	{
-		// 设置当前项为选中状态
-		this->setSelected(true);
-		QGraphicsRectItem::mousePressEvent(event);
-	}
-
-	void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override
-	{
-		// 取消选中状态
-		this->setSelected(false);
-		QGraphicsRectItem::mouseReleaseEvent(event);
+		QPen pen;
+		pen.setWidth(2);          // 设置边框宽度为2像素
+		pen.setColor(Qt::black);    // 设置边框颜色为黑色
+		pen.setStyle(Qt::SolidLine);// 设置边框样式为实线
+		setPen(pen);
 	}
 };
 

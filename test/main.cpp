@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
 
 	QApplication a(argc, argv);
 	WidgetTest widget;
+	widget.setFixedSize(800, 600);
 
 
 #ifdef QT_DEBUG

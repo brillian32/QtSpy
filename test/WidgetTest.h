@@ -50,12 +50,13 @@ WidgetTest::WidgetTest(QWidget *parent)
 	thirdLayerTopLeft->addWidget(button2);
 
 //	//scrolltoitem 测试
-//	for (int i = 0; i < 100; ++i)
-//	{
-//
-//		auto *button2 = new QPushButton("Button 2");
-//		thirdLayerTopLeft->addWidget(button2);
-//	}
+	for (int i = 0; i < 100; ++i)
+	{
+		auto *button2 = new QPushButton("Button 2");
+		auto *label = new QLabel("Label 2");
+		label->setParent(button2);
+		thirdLayerTopLeft->addWidget(button2);
+	}
 
 
 	// 第三层: 左侧下部标签

@@ -71,13 +71,13 @@ void ObjTreeWidget::updateTree(QWidget *widget)
 	if (auto view = qobject_cast<QGraphicsView *>(widget))
 	{
 		updateObjectTree(widget, this);
-		expandAll();
+//		expandAll();
 		return;
 	}
 	m_curWidget = widget;
 	auto topLevelWidget = getTopLevelWidget(widget);
 	updateObjectTree(topLevelWidget, this);
-	expandAll();
+//	expandAll();
 }
 
 void ObjTreeWidget::onGetInfo(QList<QPair<QString, QString>> &info)
@@ -109,6 +109,7 @@ void ObjTreeWidget::updateObjectTree(QObject *obj, T parentItem)
 		{
 			item->setSelected(true);
 			scrollToItem(item);
+			expand(indexFromItem(item));
 		}
 		for (QObject *child : widget->children())
 		{
