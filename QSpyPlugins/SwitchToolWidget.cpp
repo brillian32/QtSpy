@@ -24,6 +24,7 @@ QString getMultiplePixmap(QString path)
 }
 SwitchToolWidget::SwitchToolWidget(QWidget *parent) : QWidget(parent)
 {
+	setObjectName("SwitchToolWidgetObj");
 	setToolTip("QtSpy Switch");
 	setAttribute(Qt::WA_TranslucentBackground);
 	setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);

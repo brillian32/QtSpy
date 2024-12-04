@@ -15,7 +15,8 @@
 const QList<QString> gNoListenObjList{
 	"infoTreeWidget" ,
 	"TreeObjMenu",
-	"DrawInfoObj"
+	"DrawInfoObj",
+	"SwitchToolWidgetObj"
 };
 
 class QSpy: public QObject , public IQSpyInterface
