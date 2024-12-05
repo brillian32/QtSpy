@@ -13,7 +13,7 @@
 
 //不参与窗口调试
 const QList<QString> gNoListenObjList{
-	"infoTreeWidget" ,
+//	"infoTreeWidget" ,
 	"TreeObjMenu",
 	"DrawInfoObj",
 	"SwitchToolWidgetObj"

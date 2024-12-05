@@ -14,7 +14,8 @@
 2. [x] 兼容linux X11窗口系统
 3. [ ] UI 优化
 4. [ ] 支持qgraphicsview
-5. [ ] treeview 跳转不正确
+5. [x] treeview 跳转不正确
+6. [ ] 实现obj搜索功能
 
 # how to use
 ``` C++

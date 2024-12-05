@@ -8,12 +8,16 @@
 #include "qapplication.h"
 #include "qdebug.h"
 #include "qgraphicsview.h"
+#include "qheaderview.h"
 #include <QDesktopWidget>
+#include <QHBoxLayout>
+#include "qtimer.h"
 
 ObjTreeWidget::ObjTreeWidget(QWidget *parent) : QTreeWidget(parent)
 {
 	// 设置右键菜单策略
 	setContextMenuPolicy(Qt::CustomContextMenu);
+	setSelectionMode(QAbstractItemView::SingleSelection);
 	m_menu = new TreeObjMenu(this);
 	m_menu->hide();
 	QDesktopWidget *desktop = QApplication::desktop();
@@ -47,6 +51,29 @@ ObjTreeWidget::ObjTreeWidget(QWidget *parent) : QTreeWidget(parent)
 		m_menu->move(mapToGlobal(pos));
 		m_menu->show();
 	});
+
+	auto searchWid = new SearchWidget(this);
+	searchWid->setFixedHeight(24);
+	auto headerView = header();
+	headerView->setFixedHeight(24);
+	auto *layout = new QHBoxLayout(headerView);
+	layout->addStretch();
+	layout->addWidget(searchWid);
+	layout->setContentsMargins(0, 0, 0, 0);
+	connect(searchWid, &SearchWidget::sigSearch, [=](const QString &text) {
+		QList<QTreeWidgetItem *> itemFindList;
+		traverseTreeWidgetItems(this, text, itemFindList);
+		clearSelection();
+
+		for (auto item : itemFindList)
+		{
+			if (!item)
+				return;
+			item->setSelected(true);
+			scrollToItem(item);
+			expand(indexFromItem(item));
+		}
+	});
 }
 
 QWidget *ObjTreeWidget::getTopLevelWidget(QWidget *widget)
@@ -71,13 +98,13 @@ void ObjTreeWidget::updateTree(QWidget *widget)
 	if (auto view = qobject_cast<QGraphicsView *>(widget))
 	{
 		updateObjectTree(widget, this);
-//		expandAll();
+		//		expandAll();
 		return;
 	}
 	m_curWidget = widget;
 	auto topLevelWidget = getTopLevelWidget(widget);
 	updateObjectTree(topLevelWidget, this);
-//	expandAll();
+	//	expandAll();
 }
 
 void ObjTreeWidget::onGetInfo(QList<QPair<QString, QString>> &info)
@@ -152,3 +179,34 @@ void ObjTreeWidget::addItemsFromScene(QGraphicsScene *scene, QTreeWidget *treeWi
 }
 
 ObjTreeWidget::~ObjTreeWidget() = default;
+
+
+void ObjTreeWidget::traverseTreeWidgetItems(QTreeWidget *treeWidget, QString str, QList<QTreeWidgetItem *> &list)
+{
+	// 获取根节点的数量
+	int topLevelItemCount = treeWidget->topLevelItemCount();
+	for (int i = 0; i < topLevelItemCount; ++i)
+	{
+		QTreeWidgetItem *item = treeWidget->topLevelItem(i);
+		traverseItem(item, str, list);
+	}
+}
+
+void ObjTreeWidget::traverseItem(QTreeWidgetItem *item, QString &str, QList<QTreeWidgetItem *> &list)
+{
+	if (!item) return;
+
+	// 处理当前节点
+	if (item->text(0).contains(str,Qt::CaseInsensitive))
+	{
+		list.append(item);
+	}
+
+	// 递归遍历子节点
+	int childCount = item->childCount();
+	for (int i = 0; i < childCount; ++i)
+	{
+		QTreeWidgetItem *childItem = item->child(i);
+		traverseItem(childItem, str, list);
+	}
+}

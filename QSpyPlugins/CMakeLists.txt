@@ -45,8 +45,11 @@ add_library(QSpyPlugins MODULE
         ${CMAKE_CURRENT_SOURCE_DIR}/TreeObjMenu.h
         ${CMAKE_CURRENT_SOURCE_DIR}/TreeObjMenu.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/TreeObjMenu.ui
-        SwitchToolWidget.cpp
-        SwitchToolWidget.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/SwitchToolWidget.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/SwitchToolWidget.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/SearchWidget.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/SearchWidget.h
+
         ${RESOURCES}
 )
 

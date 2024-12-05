@@ -7,6 +7,7 @@
 #include "QTreeWidget.h"
 #include "TreeObjMenu.h"
 #include <QGraphicsItem>
+#include "SearchWidget.h"
 
 class ObjTreeWidget: public QTreeWidget
 {
@@ -32,8 +33,12 @@ private:
 	template<typename T>
 	void addItemsToTree(QGraphicsItem *item ,T treeWidget);
 
+	void traverseTreeWidgetItems(QTreeWidget *treeWidget,QString str,QList<QTreeWidgetItem*> &list);
+	void traverseItem(QTreeWidgetItem *item,QString &str,QList<QTreeWidgetItem*> &list);
+
 	QWidget* m_curWidget{};
 	TreeObjMenu *m_menu{};
+
 };
 
 

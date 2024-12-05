@@ -53,7 +53,9 @@ WidgetTest::WidgetTest(QWidget *parent)
 	for (int i = 0; i < 100; ++i)
 	{
 		auto *button2 = new QPushButton("Button 2");
+		button2->setObjectName("btn" + QString::number(i));
 		auto *label = new QLabel("Label 2");
+		label->setObjectName("lab" + QString::number(i));
 		label->setParent(button2);
 		thirdLayerTopLeft->addWidget(button2);
 	}
