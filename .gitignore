@@ -9,3 +9,5 @@
 cmake-build-debug/CMakeFiles/clion-Debug-log.txt
 *.filters
 *.filters
+.idea/
+cmake-build-debug-visual-studio/

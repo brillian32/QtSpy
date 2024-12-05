@@ -30,8 +30,10 @@ find_package(Qt5 COMPONENTS
 set(RESOURCES
         res.qrc
 )
+
 # 使用 qt5_add_resources 将资源文件添加到项目中
-qt5_add_resources(RESOURCE_FILES ${RESOURCES})
+# add_library已自动支持qrc转换 autoRCC
+#qt5_add_resources(RESOURCE_FILES ${RESOURCES})
 
 add_library(QSpyPlugins MODULE
         ${CMAKE_CURRENT_SOURCE_DIR}/QSpy.cpp
@@ -45,7 +47,7 @@ add_library(QSpyPlugins MODULE
         ${CMAKE_CURRENT_SOURCE_DIR}/TreeObjMenu.ui
         SwitchToolWidget.cpp
         SwitchToolWidget.h
-        ${RESOURCE_FILES}
+        ${RESOURCES}
 )
 
 target_include_directories(QSpyPlugins
